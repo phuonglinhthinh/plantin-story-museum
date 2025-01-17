@@ -1,25 +1,52 @@
-// const navbarToggle = document.getElementById("navbar-toggle");
-// const navbarLinks = document.getElementById("navbar-links");
+const init = () => {
 
-// // Toggle the menu on click
-// navbarToggle.addEventListener("click", () => {
-//   navbarLinks.classList.toggle("navbar__links--active");
-// });
+  const $navButton = document.querySelector('.nav__button');
+  const $navList = document.querySelector('.nav__list');
+  const $iconLink = document.querySelector('#iconlink');
+  const listItems = $navList.querySelectorAll("li a");
 
-// // Close menu when a link is clicked
-// document.querySelectorAll(".navbar__link").forEach(link => {
-//   link.addEventListener("click", () => {
-//     navbarLinks.classList.remove("navbar__links--active");
-//   });
-// });
+  $navButton.classList.remove('hidden');
+  $navList.classList.add("hidden");
 
-const sideBar = document.querySelector('nav--mobile');
+  const openNavigation = () => {
+    $navButton.setAttribute("aria-expanded", "true");
+    $iconLink.setAttribute("xlink:href", "#close");
+    $navList.classList.remove("hidden");
+    console.log("working");
+  }
 
-showSidebar = () => {
-  sideBar.addEventListener("click", () => {
-    navbarLinks.classList.toggle("navbar__links--active");
+  const closeNavigation = () => {
+    $navButton.setAttribute("aria-expanded", "false");
+    $iconLink.setAttribute("xlink:href", "#navicon");
+    $navList.classList.add("hidden");
+  }
+
+  const toggleNavigation = () => {
+    const open = $navButton.getAttribute("aria-expanded");
+    open === "false" ? openNavigation() : closeNavigation();
+  }
+
+
+  const handleBlur = () => {
+    // if (!e.relatedTarget || !$navList.contains(e.relatedTarget)) {
+    closeNavigation();
+    }
+  // }
+
+  $navButton.addEventListener("click", toggleNavigation);
+
+  // add event to the last item in the nav list to trigger the disclosure to close if the user tabs out of the disclosure
+  listItems[listItems.length - 1].addEventListener("blur", handleBlur);
+
+  // Close the disclosure if a user presses the escape key
+  window.addEventListener("keyup", (e) => {
+    if (e.key === "Escape") {
+      $navButton.focus();
+      closeNavigation();
+    }
   });
 }
-closeSidebar = () => {
-  sideBar.classList.display = 'none';
-}
+
+
+
+init();
