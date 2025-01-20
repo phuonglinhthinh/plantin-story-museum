@@ -344,19 +344,21 @@
   </nav>
   <main class="main">
     <section class="hero">
-      <h1 class="hero__title">Christopher Plantin</h1>
-      <p class="hero__slogan"></p>
-      <p class="hero__description">Discover the legacy of a man who turned printing into an art and knowledge into
-        power.</p>
+      <div class="hero__container">
+        <h1 class="hero__title">Christopher Plantin</h1>
+        <p class="hero__slogan">The Man Who Printed the Renaissance</p>
+        <p class="hero__description">Discover the legacy of a man who turned printing into an art and knowledge into
+          power.</p>
+      </div>
     </section>
     <section class="bio">
       <h1 class="">Who was Christopher Plantin</h1>
       <p class="">Christophe Plantin (1520–1589) was a visionary printer who built one of the greatest printing houses
         of the
-        Renaissance.</br>
+        Renaissance.<br/>
         From humble beginnings as a bookbinder, he built the Plantin Press into a world-renowned printing house,
         celebrated for
-        its precision and quality.</br>
+        its precision and quality.<br/>
         His work made knowledge more accessible and brought precision to the art of printing.</p>
       <p class="">But Plantin’s story wasn’t always rooted in France.</p>
     </section>
@@ -1622,7 +1624,7 @@
       <div class="step">4</div>
       <div class="step">5</div>
       <div class="step">6</div>
-      <button>Try again</button>
+      <button class="button">Try again</button>
     </section>
     <section class="casting">
       <h1>Letter Casting</h1>
@@ -1647,14 +1649,14 @@
       <div class="">Quick revise</div>
       <h1>How much can you remember from this story?</h1>
       <p>Answer 5 simple questions to test your knowledge of this story.</p>
-      <button>Start</button>
+      <button class="button">Start</button>
     </section>
     <section>
-      <h1>Step into Plantin’s world</h1>
+      <h1>Step into Plantin’s World</h1>
       <p>Plantin’s story comes alive at the Plantin-Moretus Museum in Antwerp. Walk through his original workshop, see
         the
         presses he used, explore a treasure trove of Renaissance books, and more.</p>
-      <button>Plan your visit</button>
+      <button class="button">Plan your visit</button>
       <div>What to expect?</div>
       <div>
         <img src="#" alt="">
@@ -1674,7 +1676,7 @@
       </div>
     </section>
     <section class="museum">
-      <h1>More stories <span>coming soon</span>!</h1>
+      <h1>More Stories <span>coming soon</span>!</h1>
       <p>Every two months, we’ll release a new chapter in the history of printing. Here’s what’s coming next:</p>
       <div class="table">
         <div class="release-date">Released</div>
@@ -1682,11 +1684,11 @@
       </div>
     </section>
     <section class="subscribe">
-      <h1>Don't miss a page of history</h1>
+      <h1>Don't Miss a Page of History</h1>
       <p>Subscribe to receive updates about our upcoming stories, events, and everything happening at the
         Plantin-Moretus Museum.</p>
       <input type="email" id="email" pattern=".+@example\.com" placeholder="Your email address" size="30" required />
-      <button>Subscribe</button>
+      <button class="button">Subscribe</button>
     </section>
   </main>
   <footer class="footer">
@@ -1988,15 +1990,15 @@
                                 4 -10 13 -19 21 -19 20 0 19 66 -2 74 -9 3 -63 6 -120 6 l-104 0 0 -35z" />
         </g>
       </svg></a>
-    <div>
-      <li class=""><a href="#">Stories</a></li>
-      <li class=""><a href="#">About</a></li>
-      <li class=""><a href="#">Exhibition</a></li>
-      <li class=""><a href="#">Collections</a></li>
-      <li class=""><a href="#">Plan your visit</a></li>
-    </div>
-    <div>© Copyright 2025 Devine - Thinh Phuong Linh</div>
-    <div>
+    <ul class="footer__list">
+      <li class="footer__item"><a class="footer__link" href="#">Stories</a></li>
+      <li class="footer__item"><a class="footer__link" href="#">About</a></li>
+      <li class="footer__item"><a class="footer__link" href="#">Exhibition</a></li>
+      <li class="footer__item"><a class="footer__link" href="#">Collections</a></li>
+      <li class="footer__item"><a class="footer__link" href="#">Plan your visit</a></li>
+    </ul>
+    <div class="footer__copyright">© Copyright 2025 Devine - Thinh Phuong Linh</div>
+    <div class="footer__socials">
       <a href="#"><svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M15.5002 2.5C12.1055 2.5 11.6805 2.51458 10.3471 2.575C5.80754 2.78333 3.28462 5.30208 3.07629 9.84583C3.01483 11.1802 3.00024 11.6052 3.00024 15C3.00024 18.3948 3.01483 18.8208 3.07524 20.1542C3.28358 24.6938 5.80233 27.2167 10.3461 27.425C11.6805 27.4854 12.1055 27.5 15.5002 27.5C18.895 27.5 19.3211 27.4854 20.6544 27.425C25.1898 27.2167 27.719 24.6979 27.9242 20.1542C27.9857 18.8208 28.0002 18.3948 28.0002 15C28.0002 11.6052 27.9857 11.1802 27.9252 9.84688C27.7211 5.31146 25.1992 2.78438 20.6555 2.57604C19.3211 2.51458 18.895 2.5 15.5002 2.5ZM15.5002 8.58125C11.9555 8.58125 9.08149 11.4552 9.08149 15C9.08149 18.5448 11.9555 21.4198 15.5002 21.4198C19.045 21.4198 21.919 18.5458 21.919 15C21.919 11.4552 19.045 8.58125 15.5002 8.58125ZM15.5002 19.1667C13.1992 19.1667 11.3336 17.3021 11.3336 15C11.3336 12.699 13.1992 10.8333 15.5002 10.8333C17.8013 10.8333 19.6669 12.699 19.6669 15C19.6669 17.3021 17.8013 19.1667 15.5002 19.1667ZM22.1732 6.82812C21.344 6.82812 20.6721 7.5 20.6721 8.32812C20.6721 9.15625 21.344 9.82812 22.1732 9.82812C23.0013 9.82812 23.6721 9.15625 23.6721 8.32812C23.6721 7.5 23.0013 6.82812 22.1732 6.82812Z"

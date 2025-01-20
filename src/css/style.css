@@ -10,6 +10,7 @@ html {
 
 :root {
   --light-grey: #F6F5F1;
+  --dark-red: #A91626;
 }
 
 img {
@@ -25,20 +26,28 @@ a {
   text-decoration: none;
 }
 
-/* this is because the reset file fucked */
-li {
-  list-style: none;
-}
-
 h1 {
   font-family: "haboro", sans-serif;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: var(--dark-red);
+  padding: 1rem 0 1.5rem 0;
+  line-height: 1.2;
 }
 
 p {
   font-family: "Radio Canada Big", sans-serif;
   font-weight: 400;
+  max-width: 50ch;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.button {
+  color: var(--dark-red);
+  background-color: #fff;
+  border: 1px solid var(--dark-red);
+  padding: .5rem 1.5rem;
+  box-shadow: 3px 3px 0 0 var(--dark-red);
 }
 
 body {
@@ -49,12 +58,10 @@ body {
 
 .nav {
   background-color: var(--light-grey);
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 0 auto;
   max-width: 100%;
   display: grid;
   padding: 0 1rem;
-  border-bottom: solid 1px black;
-  /* margin: 0; */
 }
 
 .logo {
@@ -94,17 +101,15 @@ body {
 .nav__list {
   grid-row: 2;
   grid-column: 1 / span 3;
-  /* padding-left: 0; */
-  /* margin-bottom: 3rem; */
 }
 
 .nav__item {
   border-top: solid 1px black;
 }
 
-.nav__item:last-of-type {
+/* .nav__item:last-of-type {
   border-bottom: solid 1px black;
-}
+} */
 
 .nav__link {
   display: block;
@@ -119,6 +124,7 @@ body {
 
 /* MAIN */
 .main {
+  border-top: solid 1px black;
   padding: 0 1rem;
 }
 
@@ -127,6 +133,64 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 65vh;
+  position: relative;
+}
+
+.hero__container {
+  position: absolute;
+  top: 75%;
+}
+
+.bio {
+  height: 65vh;
+  position: relative;
+  margin-top: 5rem;
+}
+
+/* footer */
+.footer {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  justify-items: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid black;
+  gap: 1rem;
+}
+
+.footer__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  height: 10.5vh;
+  background-color: grey;
+  gap: 1px;
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.footer__item {
+  background-color: #fff;
+  text-align: center;
+  align-content: center;
+}
+
+.footer__item:nth-child(2) {
+  grid-column: span 2;
+}
+
+.footer__item:nth-child(4),
+.footer__item:nth-child(5) {
+  grid-column: span 2;
+}
+
+.footer__link {
+  font-family: "Radio Canada Big", sans-serif;
+  text-align: center;
+  color: black;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0.5rem 2rem;
 }
 
 /* @media (prefers-reduced-motion:no-preference) {
@@ -173,5 +237,37 @@ body {
 
   .nav__link {
     padding: 0 2rem;
+  }
+
+  /* footer */
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .footer__list {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    align-self: center;
+  }
+
+  .footer__item {
+    background-color: transparent;
+  }
+
+  .footer__link {
+    min-width: 4vw;
+  }
+
+  .footer__socials {
+    grid-row: 1;
+    grid-column: 3;
+    align-self: center;
+  }
+
+  .footer__copyright {
+    grid-column: 2;
   }
 }
