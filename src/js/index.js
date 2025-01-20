@@ -30,7 +30,7 @@ const init = () => {
   const handleBlur = () => {
     // if (!e.relatedTarget || !$navList.contains(e.relatedTarget)) {
     closeNavigation();
-    }
+  }
   // }
 
   $navButton.addEventListener("click", toggleNavigation);
@@ -45,7 +45,26 @@ const init = () => {
       closeNavigation();
     }
   });
+
+  window.addEventListener('mousemove', handleGlobalUserInteraction);
+  window.addEventListener('touchmove', handleGlobalUserInteraction);
+  window.addEventListener('scroll', handleGlobalUserInteraction);
+  requestAnimationFrame(interactionChecker);
+
 }
+
+let lastInteractionTime = 0;
+
+const handleGlobalUserInteraction = () => {
+  lastInteractionTime = performance.now();
+};
+
+const interactionChecker = () => {
+  const timeSinceLastInteraction = performance.now() - lastInteractionTime;
+  const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
+  console.log(isInteracting);
+  requestAnimationFrame(interactionChecker);
+};
 
 
 
