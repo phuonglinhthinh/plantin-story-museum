@@ -144,10 +144,21 @@ body {
   background-size: cover;
 }
 
+#printing-process,
+#plantin {
+  width: 100%;
+  height: auto;
+}
+
+
 .hero {
   width: 100%;
   height: 75vh;
   position: relative;
+}
+
+.container {
+  padding: 0 1rem;
 }
 
 .hero__container {
@@ -157,7 +168,7 @@ body {
   padding: 0 1rem;
 }
 
-.hero__slogan {
+.slogan {
   font-family: "lust-text", serif;
   font-weight: 400;
   font-style: italic;
@@ -173,10 +184,11 @@ mark {
 }
 
 .bio {
+  width: 100%;
   height: 65vh;
   position: relative;
-  margin-top: 5rem;
 }
+
 /* footer */
 .footer {
   display: grid;

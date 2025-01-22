@@ -12,21 +12,47 @@ const $iconLink = document.querySelector('#iconlink');
 $navButton.classList.remove('hidden');
 $navList.classList.add("hidden");
 // CANVAS RESIZE
-const canvas = document.querySelector('.canvas'); 
+const canvas = document.querySelector('.canvas');
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight - 50/100 * window.innerHeight;
+canvas.height = window.innerHeight - 50 / 100 * window.innerHeight;
 
+//RESPONSIVE
+let currentSrc = "";
 
-// MOTION
-const player = new DotLottie({
+const loadMotion = () => {
+  const isMobile = window.matchMedia("(max-width: 425px)").matches;
+  const motionSrc = isMobile
+    ? "assets/motion/main0.json"
+    : "assets/motion/main.json";
+
+  if (currentSrc !== motionSrc) {
+    currentSrc = motionSrc;
+
+    const player = new DotLottie({
+      autoplay: true,
+      loop: true,
+      canvas: document.querySelector("#anim"),
+      src: motionSrc,
+      marker: "box",
+    });
+  }
+}
+loadMotion();
+
+//MOTION
+const printingProcess = new DotLottie({
   autoplay: true,
   loop: true,
-  canvas: document.querySelector("#anim"),
-  src: "assets/motion/main0.json",
-  marker: "box"
+  canvas: document.querySelector("#printing-process"),
+  src: "assets/motion/printing-process.json",
+  marker: "step1",
 });
-
-
+const plantin = new DotLottie({
+  autoplay: true,
+  loop: true,
+  canvas: document.querySelector("#plantin"),
+  src: "assets/motion/christopherplantin.json",
+});
 
 // NAV
 const openNavigation = () => {
@@ -46,27 +72,16 @@ const toggleNavigation = () => {
   open === "false" ? openNavigation() : closeNavigation();
 }
 
-// DEMO MOUSEMOVE
-// window.addEventListener('mousemove', handleGlobalUserInteraction);
-// window.addEventListener('touchmove', handleGlobalUserInteraction);
-// window.addEventListener('scroll', handleGlobalUserInteraction);
-// requestAnimationFrame(interactionChecker);
-
-// let lastInteractionTime = 0;
-// const handleGlobalUserInteraction = () => {
-//   lastInteractionTime = performance.now();
-// };
-
-// const interactionChecker = () => {
-//   const timeSinceLastInteraction = performance.now() - lastInteractionTime;
-//   const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
-//   requestAnimationFrame(interactionChecker);
-// };
 
 const init = () => {
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
   ScrollTrigger.defaults({ markers: false });
+
   $navButton.addEventListener("click", toggleNavigation);
+
+  window.addEventListener("resize", () => {
+    loadMotion();
+  });
 }
 
 init();
