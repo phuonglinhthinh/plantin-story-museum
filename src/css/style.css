@@ -129,10 +129,10 @@ body {
 }
 
 .hero {
-  background-image: url("/public/assets/img/bg-mobile.png");
+  /* background-image: url("/public/assets/img/bg-mobile.png");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   height: 65vh;
   position: relative;
 }
