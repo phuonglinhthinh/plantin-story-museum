@@ -8,10 +8,14 @@ import { DotLottie } from '@lottiefiles/dotlottie-web';
 const $navButton = document.querySelector('.nav__button');
 const $navList = document.querySelector('.nav__list');
 const $iconLink = document.querySelector('#iconlink');
-const listItems = $navList.querySelectorAll("li a");
 
 $navButton.classList.remove('hidden');
 $navList.classList.add("hidden");
+// CANVAS RESIZE
+const canvas = document.querySelector('.canvas'); 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight - 50/100 * window.innerHeight;
+
 
 // MOTION
 const player = new DotLottie({
@@ -21,6 +25,8 @@ const player = new DotLottie({
   src: "assets/motion/main0.json",
   marker: "box"
 });
+
+
 
 // NAV
 const openNavigation = () => {
@@ -40,39 +46,22 @@ const toggleNavigation = () => {
   open === "false" ? openNavigation() : closeNavigation();
 }
 
-const handleBlur = () => {
-  // if (!e.relatedTarget || !$navList.contains(e.relatedTarget)) {
-  closeNavigation();
-}
-// }
-
-// add event to the last item in the nav list to trigger the disclosure to close if the user tabs out of the disclosure
-listItems[listItems.length - 1].addEventListener("blur", handleBlur);
-
-// Close the disclosure if a user presses the escape key
-window.addEventListener("keyup", (e) => {
-  if (e.key === "Escape") {
-    $navButton.focus();
-    closeNavigation();
-  }
-});
-
-let lastInteractionTime = 0;
-const handleGlobalUserInteraction = () => {
-  lastInteractionTime = performance.now();
-};
-
-const interactionChecker = () => {
-  const timeSinceLastInteraction = performance.now() - lastInteractionTime;
-  const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
-  requestAnimationFrame(interactionChecker);
-};
-
 // DEMO MOUSEMOVE
-window.addEventListener('mousemove', handleGlobalUserInteraction);
-window.addEventListener('touchmove', handleGlobalUserInteraction);
-window.addEventListener('scroll', handleGlobalUserInteraction);
-requestAnimationFrame(interactionChecker);
+// window.addEventListener('mousemove', handleGlobalUserInteraction);
+// window.addEventListener('touchmove', handleGlobalUserInteraction);
+// window.addEventListener('scroll', handleGlobalUserInteraction);
+// requestAnimationFrame(interactionChecker);
+
+// let lastInteractionTime = 0;
+// const handleGlobalUserInteraction = () => {
+//   lastInteractionTime = performance.now();
+// };
+
+// const interactionChecker = () => {
+//   const timeSinceLastInteraction = performance.now() - lastInteractionTime;
+//   const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
+//   requestAnimationFrame(interactionChecker);
+// };
 
 const init = () => {
   gsap.registerPlugin(ScrollTrigger, TextPlugin);

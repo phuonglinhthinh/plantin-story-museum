@@ -57,3 +57,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+
+/* //Close the disclosure if a user presses the escape key */
+/* window.addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    $navButton.focus();
+    closeNavigation();
+  }
+}); */
