@@ -1,3 +1,8 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
+
+
 import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 const $navButton = document.querySelector('.nav__button');
@@ -8,19 +13,20 @@ const listItems = $navList.querySelectorAll("li a");
 $navButton.classList.remove('hidden');
 $navList.classList.add("hidden");
 
+// MOTION
 const player = new DotLottie({
   autoplay: true,
   loop: true,
   canvas: document.querySelector("#anim"),
-  src: "assets/motion/main.json",
+  src: "assets/motion/main0.json",
   marker: "box"
 });
 
+// NAV
 const openNavigation = () => {
   $navButton.setAttribute("aria-expanded", "true");
   $iconLink.setAttribute("xlink:href", "#close");
   $navList.classList.remove("hidden");
-  console.log("working");
 }
 
 const closeNavigation = () => {
@@ -34,14 +40,11 @@ const toggleNavigation = () => {
   open === "false" ? openNavigation() : closeNavigation();
 }
 
-
 const handleBlur = () => {
   // if (!e.relatedTarget || !$navList.contains(e.relatedTarget)) {
   closeNavigation();
 }
 // }
-
-$navButton.addEventListener("click", toggleNavigation);
 
 // add event to the last item in the nav list to trigger the disclosure to close if the user tabs out of the disclosure
 listItems[listItems.length - 1].addEventListener("blur", handleBlur);
@@ -54,14 +57,7 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
-window.addEventListener('mousemove', handleGlobalUserInteraction);
-window.addEventListener('touchmove', handleGlobalUserInteraction);
-window.addEventListener('scroll', handleGlobalUserInteraction);
-requestAnimationFrame(interactionChecker);
-
-
 let lastInteractionTime = 0;
-
 const handleGlobalUserInteraction = () => {
   lastInteractionTime = performance.now();
 };
@@ -69,18 +65,19 @@ const handleGlobalUserInteraction = () => {
 const interactionChecker = () => {
   const timeSinceLastInteraction = performance.now() - lastInteractionTime;
   const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
-  console.log(isInteracting);
   requestAnimationFrame(interactionChecker);
 };
 
-
+// DEMO MOUSEMOVE
+window.addEventListener('mousemove', handleGlobalUserInteraction);
+window.addEventListener('touchmove', handleGlobalUserInteraction);
+window.addEventListener('scroll', handleGlobalUserInteraction);
+requestAnimationFrame(interactionChecker);
 
 const init = () => {
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
   ScrollTrigger.defaults({ markers: false });
-  openNavigation();
-  closeNavigation();
-  toggleNavigation();
   $navButton.addEventListener("click", toggleNavigation);
 }
+
 init();

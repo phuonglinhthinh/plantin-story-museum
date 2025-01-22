@@ -128,12 +128,19 @@ body {
   padding: 0 1rem;
 }
 
+#anim {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+
 .hero {
   /* background-image: url("/public/assets/img/bg-mobile.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; */
-  height: 65vh;
+  width: auto;
+  height: 100%;
   position: relative;
 }
 
