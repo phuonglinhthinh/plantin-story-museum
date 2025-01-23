@@ -67,9 +67,9 @@ button:focus-visible {
     closeNavigation();
   }
 }); */
+/*
 
-
-/* // DEMO MOUSEMOVE
+// DEMO MOUSEMOVE
 // window.addEventListener('mousemove', handleGlobalUserInteraction);
 // window.addEventListener('touchmove', handleGlobalUserInteraction);
 // window.addEventListener('scroll', handleGlobalUserInteraction);
@@ -84,4 +84,5 @@ button:focus-visible {
 //   const timeSinceLastInteraction = performance.now() - lastInteractionTime;
 //   const isInteracting = lastInteractionTime > 0 && timeSinceLastInteraction < 100;
 //   requestAnimationFrame(interactionChecker);
-// }; */
+// };
+*/

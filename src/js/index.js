@@ -11,35 +11,44 @@ const $iconLink = document.querySelector('#iconlink');
 
 $navButton.classList.remove('hidden');
 $navList.classList.add("hidden");
+
 // CANVAS RESIZE
 const canvas = document.querySelector('.canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight - 50 / 100 * window.innerHeight;
 
 //RESPONSIVE
-let currentSrc = "";
+// let currentSrc = "";
 
-const loadMotion = () => {
-  const isMobile = window.matchMedia("(max-width: 425px)").matches;
-  const motionSrc = isMobile
-    ? "assets/motion/main0.json"
-    : "assets/motion/main.json";
+// const loadMotion = () => {
+//   const isMobile = window.matchMedia("(max-width: 425px)").matches;
+//   const motionSrc = isMobile
+//     ? "assets/motion/main0.json"
+//     : "assets/motion/main.json";
 
-  if (currentSrc !== motionSrc) {
-    currentSrc = motionSrc;
+//   if (currentSrc !== motionSrc) {
+//     currentSrc = motionSrc;
 
-    const player = new DotLottie({
-      autoplay: true,
-      loop: true,
-      canvas: document.querySelector("#anim"),
-      src: motionSrc,
-      marker: "box",
-    });
-  }
-}
-loadMotion();
+//     const player = new DotLottie({
+//       autoplay: true,
+//       loop: true,
+//       canvas: document.querySelector("#anim"),
+//       src: motionSrc,
+//       marker: "box",
+//     });
+//   }
+// }
+// loadMotion();
 
 //MOTION
+const player = new DotLottie({
+  autoplay: true,
+  loop: true,
+  canvas: document.querySelector("#anim"),
+  src: "assets/motion/main0.json",
+  marker: "box",
+});
+
 const printingProcess = new DotLottie({
   autoplay: true,
   loop: true,
@@ -47,6 +56,7 @@ const printingProcess = new DotLottie({
   src: "assets/motion/printing-process.json",
   marker: "step1",
 });
+
 const plantin = new DotLottie({
   autoplay: true,
   loop: true,
@@ -79,9 +89,9 @@ const init = () => {
 
   $navButton.addEventListener("click", toggleNavigation);
 
-  window.addEventListener("resize", () => {
-    loadMotion();
-  });
+  // window.addEventListener("resize", () => {
+  //   loadMotion();
+  // });
 }
 
 init();

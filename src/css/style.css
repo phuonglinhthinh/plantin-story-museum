@@ -157,6 +157,7 @@ body {
   position: relative;
 }
 
+.quiz__container,
 .container {
   padding: 0 1rem;
 }
@@ -240,7 +241,62 @@ mark {
   }
 } */
 
+.quiz__container {
+  background-color: var(--dark-red);
+}
+
+.quiz__landing,
+.quiz__page,
+.quiz__result {
+  /* display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1rem; */
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.quiz__title {
+  color: var(--light-grey);
+}
+
+.quiz__subtitle {
+  font-family: "lust-text", serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#progressBar {
+  display: flex;
+}
+
+.progress div {
+  width: 20px;
+  height: 20px;
+  background: #ffffff50;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.progress div.active {
+  background: #fff;
+}
+#questionText {
+  color: var(--light-grey);
+}
 @media screen and (min-width: 62em) {
+  h1 {
+    max-width: 70vw;
+  }
+
   .nav {
     grid-template-columns: min-content auto;
     align-items: center;

@@ -1053,14 +1053,46 @@
         <div class="order">4</div>
       </div>
     </section>
-    <section class="quiz">
-      <div class="container">
-        <div class="">Quick revise</div>
-        <h1>How much can you remember from this story?</h1>
-        <p>Answer 5 simple questions to test your knowledge of this story.</p>
+    <!-- <section class="quiz">
+      <div class="quiz__container">
+        <p class="quiz__subtitle">Quick revise</p>
+        <h1 class="quiz__title">How much can you remember from this story?</h1>
+        <p class="quiz__description">Answer 5 simple questions to test your knowledge of this story.</p>
         <button class="button">Start</button>
       </div>
+    </section> -->
+    <section class="quiz">
+      <div class="quiz__container">
+        <div id="landing" class="quiz__landing">
+          <p class="quiz__subtitle">Quick revise</p>
+          <h1 class="quiz__title">How much can you remember from this story?</h1>
+          <p class="quiz__description">
+            Answer 5 simple questions to test your knowledge of this story.
+          </p>
+          <button class="button" id="startQuiz">Start</button>
+        </div>
+    
+        <div id="quizPage" class="quiz__page hidden">
+          <div class="quiz__progress">
+            <div class="progress">
+              <div id="progressBar"></div>
+            </div>
+          </div>
+          <h1 id="questionText">Question will appear here</h1>
+          <div class="quiz__answers">
+            <button class="button" id="yesButton">Yes</button>
+            <button class="button" id="noButton">No</button>
+          </div>
+        </div>
+    
+        <div id="resultPage" class="quiz__result hidden">
+          <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
+          <p id="feedbackText"></p>
+          <button class="button" id="restartQuiz">Play Again</button>
+        </div>
+      </div>
     </section>
+
     <section>
       <div class="container">
         <h1>Step into Plantin’s World</h1>
@@ -1437,6 +1469,7 @@
         </svg></a>
     </div>
   </footer>
+  <script type="module" src="src/js/quiz.js"></script>
   <script type="module" src="src/js/index.js"></script>
 </body>
 
