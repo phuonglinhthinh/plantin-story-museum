@@ -60,20 +60,19 @@ const player2 = new DotLottie({
 
 //PRINTING PRESS
 const steps = [
-  { marker: "box", completed: false },
-  { marker: "circle", completed: false },
-  { marker: "hexa", completed: false },
-  { marker: "box", completed: false },
-  { marker: "circle", completed: false },
-  { marker: "box", completed: false },
+  { marker: "step3", completed: false },
+  { marker: "step4", completed: false },
+  { marker: "step6", completed: false },
+  { marker: "result1", completed: false },
+  { marker: "result2", completed: false },
+  { marker: "result3", completed: false },
 ];
 
 const player = new DotLottie({
   autoplay: false,
   loop: false,
   canvas: document.querySelector("#printing-process"),
-  // src: "assets/motion/printing-process.json",
-  src: "assets/motion/lottie-demo.json",
+  src: "assets/motion/printing-process.json",
 });
 
 // Handle button clicks
