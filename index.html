@@ -389,7 +389,7 @@
         <p>An Unmatched Library</p>
         <p>Teamwork at Its Finest</p>
         <div>Drag the rubber roller to reveal them.</div>
-        <p>Ready to experience a day in Plantin’s office?</p>
+        <p class="slogan">Ready to experience a day in Plantin’s office?</p>
       </div>
     </section>
     <section class="printing">
@@ -403,149 +403,153 @@
       </div>
       <img src="/assets/img/rubber-roller.svg" width="150" alt="paint">
       <canvas class="canvas" id="printing-process"></canvas>
-      <div class="step">1</div>
-      <div class="step">2</div>
-      <div class="step">3</div>
-      <div class="step">4</div>
-      <div class="step">5</div>
-      <div class="step">6</div>
-      <button class="button">Try again</button>
-    </section>
-    <section class="casting">
-      <div class="container">
-        <h1>Letter Casting</h1>
-        <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by the skilled
-          artisans of Plantin’s team. This process required precision and patience, and these tiny metal blocks were the
-          foundation of every book.</p>
-
-        <!-- Status Bar -->
-        <div class="status-bar">
-          <div class="circle" data-step="1"></div>
-          <div class="circle" data-step="2"></div>
-          <div class="circle" data-step="3"></div>
-          <div class="circle" data-step="4"></div>
-        </div>
-
-        <!-- Cards Section -->
-        <div class="cards-container">
-          <div class="card" draggable="true" data-order="1">
-            <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
-            <div class="card-content">
-              <h2>Step 1: Prepare the Mold</h2>
-              <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
-                uniformity.
-              </p>
-            </div>
-          </div>
-          <div class="card" draggable="true" data-order="3">
-            <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
-            <div class="card-content">
-              <h2>Step 3: Cast the Letter</h2>
-              <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.</p>
-            </div>
-          </div>
-          <div class="card" draggable="true" data-order="2">
-            <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
-            <div class="card-content">
-              <h2>Step 2: Melt the Metal</h2>
-              <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
-            </div>
-          </div>
-          <div class="card" draggable="true" data-order="4">
-            <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
-            <div class="card-content">
-              <h2>Step 4: Polish the Block</h2>
-              <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="step-buttons">
+        <button data-step="1">Step 1</button>
+        <button data-step="2">Step 2</button>
+        <button data-step="3">Step 3</button>
+        <button data-step="4">Step 4</button>
+        <button data-step="5">Step 5</button>
+        <button data-step="6">Step 6</button>
       </div>
-    </section>
-    <section class="quiz">
-      <div id="landing" class="quiz__landing">
-        <div class="quiz__container">
-          <p class="quiz__subtitle">Quick revise</p>
-          <h1 class="quiz__title">How much can you remember from this story?</h1>
-          <p class="quiz__description">
-            Answer 5 simple questions to test your knowledge of this story.
-          </p>
-          <button class="quiz__button" id="startQuiz">Start</button>
-        </div>
-      </div>
+      <section class="casting">
+        <div class="container">
+          <h1>Letter Casting</h1>
+          <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by the skilled
+            artisans of Plantin’s team. This process required precision and patience, and these tiny metal blocks were
+            the
+            foundation of every book.</p>
 
-      <div id="quizPage" class="quiz__page hidden">
-        <div class="quiz__container">
-          <div class="quiz__progress">
-            <div class="progress">
-              <div id="progressBar"></div>
+          <!-- Status Bar -->
+          <div class="status-bar">
+            <div class="circle" data-step="1"></div>
+            <div class="circle" data-step="2"></div>
+            <div class="circle" data-step="3"></div>
+            <div class="circle" data-step="4"></div>
+          </div>
+
+          <!-- Cards Section -->
+          <div class="cards-container">
+            <div class="card" draggable="true" data-order="1">
+              <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
+              <div class="card-content">
+                <h2>Step 1: Prepare the Mold</h2>
+                <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
+                  uniformity.
+                </p>
+              </div>
+            </div>
+            <div class="card" draggable="true" data-order="3">
+              <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
+              <div class="card-content">
+                <h2>Step 3: Cast the Letter</h2>
+                <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.
+                </p>
+              </div>
+            </div>
+            <div class="card" draggable="true" data-order="2">
+              <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
+              <div class="card-content">
+                <h2>Step 2: Melt the Metal</h2>
+                <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
+              </div>
+            </div>
+            <div class="card" draggable="true" data-order="4">
+              <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
+              <div class="card-content">
+                <h2>Step 4: Polish the Block</h2>
+                <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
+                </p>
+              </div>
             </div>
           </div>
-          <h2 id="questionText">Question will appear here</h2>
-          <div class="quiz__answers">
-            <button class="quiz__button" id="yesButton">Yes</button>
-            <button class="quiz__button" id="noButton">No</button>
-          </div>
-          <div class="quiz__navigation">
-            <button class="quiz__nav" id="prevButton"><i class="fa-solid fa-arrow-left-long"></i></button>
-            <button class="quiz__nav" id="nextButton"><i class="fa-solid fa-arrow-right-long"></i></button>
-            <button class="quiz__nav hidden" id="finishButton">Finish</button>
-          </div>
         </div>
-        <div id="resultPage" class="quiz__result hidden">
+      </section>
+      <section class="quiz">
+        <div id="landing" class="quiz__landing">
           <div class="quiz__container">
-            <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
-            <p id="feedbackText"></p>
-            <button class="button" id="restartQuiz">Play Again</button>
+            <p class="quiz__subtitle">Quick revise</p>
+            <h1 class="quiz__title">How much can you remember from this story?</h1>
+            <p class="quiz__description">
+              Answer 5 simple questions to test your knowledge of this story.
+            </p>
+            <button class="quiz__button" id="startQuiz">Start</button>
           </div>
         </div>
-    </section>
 
-    <section>
-      <div class="container">
-        <h1>Step into Plantin’s World</h1>
-        <p>Plantin’s story comes alive at the Plantin-Moretus Museum in Antwerp. Walk through his original workshop, see
-          the
-          presses he used, explore a treasure trove of Renaissance books, and more.</p>
-        <button class="button">Plan your visit</button>
-        <div>What to expect?</div>
-        <div>
-          <img src="#" alt="">
-          <p>Explore the printing house where history was made.</p>
+        <div id="quizPage" class="quiz__page hidden">
+          <div class="quiz__container">
+            <div class="quiz__progress">
+              <div class="progress">
+                <div id="progressBar"></div>
+              </div>
+            </div>
+            <h2 id="questionText">Question will appear here</h2>
+            <div class="quiz__answers">
+              <button class="quiz__button" id="yesButton">Yes</button>
+              <button class="quiz__button" id="noButton">No</button>
+            </div>
+            <div class="quiz__navigation">
+              <button class="quiz__nav" id="prevButton"><i class="fa-solid fa-arrow-left-long"></i></button>
+              <button class="quiz__nav" id="nextButton"><i class="fa-solid fa-arrow-right-long"></i></button>
+              <button class="quiz__nav hidden" id="finishButton">Finish</button>
+            </div>
+          </div>
+          <div id="resultPage" class="quiz__result hidden">
+            <div class="quiz__container">
+              <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
+              <p id="feedbackText"></p>
+              <button class="button" id="restartQuiz">Play Again</button>
+            </div>
+          </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h1>Step into Plantin’s World</h1>
+          <p>Plantin’s story comes alive at the Plantin-Moretus Museum in Antwerp. Walk through his original workshop,
+            see
+            the
+            presses he used, explore a treasure trove of Renaissance books, and more.</p>
+          <button class="button">Plan your visit</button>
+          <div>What to expect?</div>
+          <div>
+            <img src="#" alt="">
+            <p>Explore the printing house where history was made.</p>
+          </div>
+          <div>
+            <img src="#" alt="">
+            <p>Marvel at manuscripts, prints, and rare collections in the library.</p>
+          </div>
+          <div>
+            <img src="#" alt="">
+            <p>Discover the artistry behind book production.</p>
+          </div>
+          <div>
+            <img src="#" alt="">
+            <p>Meet Plantin and his family via stories</p>
+          </div>
         </div>
-        <div>
-          <img src="#" alt="">
-          <p>Marvel at manuscripts, prints, and rare collections in the library.</p>
+      </section>
+      <section class="museum">
+        <div class="container">
+          <h1>More Stories <span>coming soon</span>!</h1>
+          <p>Every two months, we’ll release a new chapter in the history of printing. Here’s what’s coming next:</p>
+          <div class="table">
+            <div class="release-date">Released</div>
+            <p class="">Legacy of Christopher’s Plantin</p>
+          </div>
         </div>
-        <div>
-          <img src="#" alt="">
-          <p>Discover the artistry behind book production.</p>
+      </section>
+      <section class="subscribe">
+        <div class="container">
+          <h1>Don't Miss a Page of History</h1>
+          <p>Subscribe to receive updates about our upcoming stories, events, and everything happening at the
+            Plantin-Moretus Museum.</p>
+          <input type="email" id="email" pattern=".+@example\.com" placeholder="Your email address" size="30"
+            required />
+          <button class="button">Subscribe</button>
         </div>
-        <div>
-          <img src="#" alt="">
-          <p>Meet Plantin and his family via stories</p>
-        </div>
-      </div>
-    </section>
-    <section class="museum">
-      <div class="container">
-        <h1>More Stories <span>coming soon</span>!</h1>
-        <p>Every two months, we’ll release a new chapter in the history of printing. Here’s what’s coming next:</p>
-        <div class="table">
-          <div class="release-date">Released</div>
-          <p class="">Legacy of Christopher’s Plantin</p>
-        </div>
-      </div>
-    </section>
-    <section class="subscribe">
-      <div class="container">
-        <h1>Don't Miss a Page of History</h1>
-        <p>Subscribe to receive updates about our upcoming stories, events, and everything happening at the
-          Plantin-Moretus Museum.</p>
-        <input type="email" id="email" pattern=".+@example\.com" placeholder="Your email address" size="30" required />
-        <button class="button">Subscribe</button>
-      </div>
-    </section>
+      </section>
   </main>
   <footer class="footer">
     <a class="logo" href="/index.html">

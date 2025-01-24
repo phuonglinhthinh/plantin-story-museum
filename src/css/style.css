@@ -54,8 +54,8 @@ p {
 }
 
 button {
-  font-family: "lust-text", serif;
-  font-weight: 400;
+  font-family: "presti-display", serif;
+  font-weight: 300;
   font-style: italic;
   cursor: pointer;
 }
@@ -177,8 +177,9 @@ body {
   text-align: center;
   padding: .5em;
   color: black;
-  font-family: "lust-text", serif;
-  font-weight: 400;
+  font-family: "presti-display", serif;
+  font-weight: 300;
+  font-style: italic;
 }
 
 .nav__link:hover {
@@ -190,30 +191,32 @@ body {
   border-top: solid 1px black;
 }
 
-
-#anim {
-  background-image: url(//assets/img/grid-bg.svg);
+.hero {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  background-image: url(/assets/img/grid-bg.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
 }
 
-.hero {
-  width: 100%;
-  height: 75vh;
-  position: relative;
-}
-
-.desktop-motion {
-  display: none;
+.desktop-motion,
+.mobile-motion {
   width: 100%;
   height: auto;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+.desktop-motion {
+  visibility: hidden;
 }
 
 .mobile-motion {
-  display: block;
-  width: 100%;
-  height: auto;
+  visibility: visible;
 }
 
 #printing-process,
@@ -222,21 +225,19 @@ body {
   height: auto;
 }
 
-.quiz__container,
 .container {
   padding: 0 1rem;
 }
 
 .hero__container {
-  position: absolute;
-  top: 47%;
-  /* for all the container */
+  /* position: absolute;
+  top: 47%; */
   padding: 0 1rem;
 }
 
 .slogan {
-  font-family: "lust-text", serif;
-  font-weight: 400;
+  font-family: "presti-display", serif;
+  font-weight: 300;
   font-style: italic;
   font-size: 1.35rem;
 }
@@ -251,7 +252,7 @@ mark {
 
 .bio {
   width: 100%;
-  height: 65vh;
+  height: auto;
   position: relative;
 }
 
@@ -322,8 +323,9 @@ mark {
 }
 
 .quiz__subtitle {
-  font-family: "lust-text", serif;
-  font-weight: 400;
+  font-family: "presti-display", serif;
+  font-weight: 300;
+  font-style: italic;
   font-size: 0.9rem;
   text-transform: uppercase;
 }
@@ -460,16 +462,16 @@ mark {
   /* main*/
   .hero {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
   }
 
   .desktop-motion {
-    display: block;
+    visibility: visible;
   }
 
   .mobile-motion {
-    display: none;
+    visibility: hidden;
   }
 
   /* footer */
