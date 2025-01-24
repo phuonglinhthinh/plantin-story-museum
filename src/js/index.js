@@ -13,9 +13,15 @@ $navButton.classList.remove('hidden');
 $navList.classList.add("hidden");
 
 // CANVAS RESIZE
-const canvas = document.querySelector('.canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const resizeCanvas = () => {
+  const canvases = document.querySelectorAll('.canvas');
+  canvases.forEach((canvas) => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+};
+resizeCanvas();
+
 
 //MOTION
 const player1 = new DotLottie({

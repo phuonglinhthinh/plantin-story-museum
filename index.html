@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/public/assets/img/museum-logo.jpg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/museum-logo.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plantin-Moretus Museum</title>
   <link rel="stylesheet" href="src/css/reset.css" />
@@ -379,7 +379,7 @@
       </div>
     </section>
     <section class="workshop">
-      <img src="public/assets/img/office.svg" alt="office">
+      <img src="/assets/img/office.svg" alt="office">
       <div class="container">
         <h1>Plantin’s Workshop - Museum</h1>
         <p>Officina Plantiniana - a place where precision, craftsmanship, and innovation came together to create books
@@ -401,7 +401,7 @@
 
           Try it yourself how to print your first paper in Plantin’s workshop by following these steps:</p>
       </div>
-      <img src="public/assets/img/rubber-roller.svg" width="150" alt="paint">
+      <img src="/assets/img/rubber-roller.svg" width="150" alt="paint">
       <canvas class="canvas" id="printing-process"></canvas>
       <div class="step">1</div>
       <div class="step">2</div>
@@ -414,23 +414,52 @@
     <section class="casting">
       <div class="container">
         <h1>Letter Casting</h1>
-        <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by hand of
-          Plantin’s team
-          with skilled artisans crafted the letters by hand. This process required precision and patience, but these
-          tiny
-          metal
-          blocks were the foundation of every book.</p>
-        <div class="card">
-          <img src="#" alt="Avatar" style="width:100%">
-          <div class="container">
-            <h2>Name of the card</h2>
-            <p>Explain this card in detail</p>
+        <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by the skilled
+          artisans of Plantin’s team. This process required precision and patience, and these tiny metal blocks were the
+          foundation of every book.</p>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <div class="circle" data-step="1"></div>
+          <div class="circle" data-step="2"></div>
+          <div class="circle" data-step="3"></div>
+          <div class="circle" data-step="4"></div>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="cards-container">
+          <div class="card" draggable="true" data-order="1">
+            <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
+            <div class="card-content">
+              <h2>Step 1: Prepare the Mold</h2>
+              <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
+                uniformity.
+              </p>
+            </div>
+          </div>
+          <div class="card" draggable="true" data-order="3">
+            <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
+            <div class="card-content">
+              <h2>Step 3: Cast the Letter</h2>
+              <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.</p>
+            </div>
+          </div>
+          <div class="card" draggable="true" data-order="2">
+            <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
+            <div class="card-content">
+              <h2>Step 2: Melt the Metal</h2>
+              <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
+            </div>
+          </div>
+          <div class="card" draggable="true" data-order="4">
+            <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
+            <div class="card-content">
+              <h2>Step 4: Polish the Block</h2>
+              <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="order">1</div>
-        <div class="order">2</div>
-        <div class="order">3</div>
-        <div class="order">4</div>
       </div>
     </section>
     <section class="quiz">
@@ -461,15 +490,15 @@
             <button class="quiz__nav" id="prevButton"><i class="fa-solid fa-arrow-left-long"></i></button>
             <button class="quiz__nav" id="nextButton"><i class="fa-solid fa-arrow-right-long"></i></button>
             <button class="quiz__nav hidden" id="finishButton">Finish</button>
+          </div>
         </div>
-      </div>
-      <div id="resultPage" class="quiz__result hidden">
-        <div class="quiz__container">
-          <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
-          <p id="feedbackText"></p>
-          <button class="button" id="restartQuiz">Play Again</button>
+        <div id="resultPage" class="quiz__result hidden">
+          <div class="quiz__container">
+            <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
+            <p id="feedbackText"></p>
+            <button class="button" id="restartQuiz">Play Again</button>
+          </div>
         </div>
-      </div>
     </section>
 
     <section>
@@ -520,7 +549,7 @@
   </main>
   <footer class="footer">
     <a class="logo" href="/index.html">
-      <img src="public/assets/img/MPM-logo.svg" width="100" alt="logo"></a>
+      <img src="/assets/img/MPM-logo.svg" width="100" alt="logo"></a>
     <ul class="footer__list">
       <li class="footer__item"><a class="footer__link" href="#">Stories</a></li>
       <li class="footer__item"><a class="footer__link" href="#">About</a></li>
@@ -553,6 +582,7 @@
     </div>
   </footer>
   <script src="https://kit.fontawesome.com/a121b991b1.js" crossorigin="anonymous"></script>
+  <script type="module" src="src/js/card.js"></script>
   <script type="module" src="src/js/quiz.js"></script>
   <script type="module" src="src/js/index.js"></script>
 </body>
