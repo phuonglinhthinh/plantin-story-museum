@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="src/css/style.css" />
 
   <link rel="stylesheet" href="https://use.typekit.net/wyu1pno.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -338,82 +340,89 @@
       <li class="nav__item"><a class="nav__link" href="#">Plan Your Visit</a></li>
   </nav>
   <main class="main">
-    <section class="hero">
-      <canvas class="canvas desktop-motion" id="anim"></canvas>
-      <canvas class="canvas mobile-motion" id="anim2"></canvas>
-
-      <div class="hero__container">
-        <h1 class="hero__title"><mark class="mark">Christopher Plantin</mark></h1>
-        <p class="slogan"><mark>The Man Who Printed the Renaissance</mark></p>
-        <p class="hero__description"><mark>Discover the legacy of a man who turned printing into an art and knowledge
-            into
-            power.</mark></p>
-      </div>
-    </section>
-    <section class="bio">
-      <canvas class="canvas" id="plantin"></canvas>
-      <div class="container">
-        <h1 class="">Who was Christopher Plantin</h1>
-        <p class="">Christophe Plantin (1520–1589) was a visionary printer who built one of the greatest printing houses
-          of the
-          Renaissance.<br />
-          From humble beginnings as a bookbinder, he built the Plantin Press into a world-renowned printing house,
-          celebrated for
-          its precision and quality.<br />
-          His work made knowledge more accessible and brought precision to the art of printing.</p>
-        <p class="slogan">But Plantin’s story wasn’t always rooted in France.</p>
-      </div>
-    </section>
-    <section class="journey">
-      <div class="container">
-        <h1 class="">A Journey of Opportunity</h1>
-        <p class="">Plantin moved to Antwerp, a bustling hub of trade, culture, and ideas. In 1555, he opened the doors
-          to
-          his workshop, the
-          Officina Plantiniana, and started printing books that would travel the world.</p>
-        <p>Plantin’s workshop was enormous for its time. At its peak, it had 22 printing presses and 80 workers, each
+    <div class="main__container">
+      <section class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title"><mark class="mark">Christopher Plantin</mark></h1>
+          <canvas id="hero__canvas"></canvas>
+          <div class="hero__detail">
+            <p class="slogan"><mark>The Man Who Printed the Renaissance</mark></p>
+            <p class="hero__description"><mark>Discover the legacy of a man who turned printing into an art and
+                knowledge
+                into
+                power.</mark></p>
+          </div>
+        </div>
+      </section>
+      <section class="bio">
+        <canvas class="canvas" id="plantin"></canvas>
+        <div class="container">
+          <h2 class="">Who was Christopher Plantin</h2>
+          <p class="">Christophe Plantin (1520–1589) was a visionary printer who built one of the greatest printing
+            houses
+            of the
+            Renaissance.<br />
+            From humble beginnings as a bookbinder, he built the Plantin Press into a world-renowned printing house,
+            celebrated for
+            its precision and quality.<br />
+            His work made knowledge more accessible and brought precision to the art of printing.</p>
+      </section>
+      <section class="journey">
+        <p class="slogan journey__slogan">But Plantin’s story wasn’t always rooted in France.</p>
+        <div class="journey__detail">
+          <h2 class="">A Journey of Opportunity</h2>
+          <p class="">Plantin moved to Antwerp, a bustling hub of trade, culture, and ideas. In 1555, he opened the
+            doors
+            to
+            his workshop, the
+            Officina Plantiniana, and started printing books that would travel the world.</p>
+        </div>
+        <img class="journey__map" src="/assets/img/map.svg" width="600" alt="map">
+      </section>
+      <section class="data">
+        <p class="slogan">Plantin’s workshop was enormous for its time. At its peak, it had 22 printing presses and 80 workers, each
           contributing
           to the meticulous art of book production.</p>
-        <div>22 presses</div>
-        <div>80 workers</div>
-      </div>
-    </section>
-    <section class="workshop">
-      <img src="/assets/img/office.svg" alt="office">
-      <div class="container">
-        <h1>Plantin’s Workshop - Museum</h1>
-        <p>Officina Plantiniana - a place where precision, craftsmanship, and innovation came together to create books
-          of
-          extraordinary quality. Here are a few things that made it unique as UNESCO heritages:</p>
-        <p>The World’s Oldest Presses</p>
-        <p>An Unmatched Library</p>
-        <p>Teamwork at Its Finest</p>
-        <div>Drag the rubber roller to reveal them.</div>
-        <p class="slogan">Ready to experience a day in Plantin’s office?</p>
-      </div>
-    </section>
-    <section class="printing">
-      <div class="container">
-        <h1>How the printing press works?</h1>
-        <p>Printing in the 16th century was a labor-intensive process requiring skill, precision, and teamwork. From
-          carving
-          movable type to aligning pages and operating the press, every step was an art in itself.</br>
+        <h2>22 presses</h2>
+        <h2>80 workers</h2>
+      </section>
+      <section class="workshop">
+        <img src="/assets/img/office.svg" width="750" alt="office">
+        <div class="container">
+          <h2>Plantin’s Workshop - Museum</h2>
+          <p>Officina Plantiniana - a place where precision, craftsmanship, and innovation came together to create books
+            of
+            extraordinary quality. Here are a few things that made it unique as UNESCO heritages:</p>
+          <p>The World’s Oldest Presses</p>
+          <p>An Unmatched Library</p>
+          <p>Teamwork at Its Finest</p>
+          <div>Drag the rubber roller to reveal them.</div>
+          <p class="slogan">Ready to experience a day in Plantin’s office?</p>
+        </div>
+      </section>
+      <section class="printing">
+        <div class="container">
+          <h2>How the printing press works?</h2>
+          <p>Printing in the 16th century was a labor-intensive process requiring skill, precision, and teamwork. From
+            carving
+            movable type to aligning pages and operating the press, every step was an art in itself.</br>
 
-          Try it yourself how to print your first paper in Plantin’s workshop by following these steps:</p>
-      </div>
-      <img src="/assets/img/rubber-roller.svg" width="150" alt="paint">
-      <canvas class="canvas" id="printing-process"></canvas>
-      <div class="step-buttons">
-        <button data-step="1">Step 1</button>
-        <button data-step="2">Step 2</button>
-        <button data-step="3">Step 3</button>
-        <button data-step="4">Step 4</button>
-        <button data-step="5">Step 5</button>
-        <button data-step="6">Step 6</button>
-      </div>
+            Try it yourself how to print your first paper in Plantin’s workshop by following these steps:</p>
+          <img src="/assets/img/rubber-roller.svg" width="150" alt="paint">
+          <canvas class="canvas" id="printing-process"></canvas>
+          <div class="step-buttons">
+            <button data-step="1">Step 1</button>
+            <button data-step="2">Step 2</button>
+            <button data-step="3">Step 3</button>
+            <button data-step="4">Step 4</button>
+            <button data-step="5">Step 5</button>
+            <button data-step="6">Step 6</button>
+          </div>
+        </div>
+      </section>
       <section class="casting">
         <div class="container">
-          <h1>Letter Casting</h1>
+          <h2>Letter Casting</h2>
           <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by the skilled
             artisans of Plantin’s team. This process required precision and patience, and these tiny metal blocks were
             the
@@ -421,10 +430,10 @@
 
           <!-- Status Bar -->
           <div class="status-bar">
-            <div class="circle" data-step="1"></div>
-            <div class="circle" data-step="2"></div>
-            <div class="circle" data-step="3"></div>
-            <div class="circle" data-step="4"></div>
+            <div class="circle" data-step="1">1</div>
+            <div class="circle" data-step="2">2</div>
+            <div class="circle" data-step="3">3</div>
+            <div class="circle" data-step="4">4</div>
           </div>
 
           <!-- Cards Section -->
@@ -432,7 +441,7 @@
             <div class="card" draggable="true" data-order="1">
               <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
               <div class="card-content">
-                <h2>Step 1: Prepare the Mold</h2>
+                <h3>Step 1: Prepare the Mold</h3>
                 <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
                   uniformity.
                 </p>
@@ -441,7 +450,7 @@
             <div class="card" draggable="true" data-order="3">
               <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
               <div class="card-content">
-                <h2>Step 3: Cast the Letter</h2>
+                <h3>Step 3: Cast the Letter</h3>
                 <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.
                 </p>
               </div>
@@ -449,14 +458,14 @@
             <div class="card" draggable="true" data-order="2">
               <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
               <div class="card-content">
-                <h2>Step 2: Melt the Metal</h2>
+                <h3>Step 2: Melt the Metal</h3>
                 <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
               </div>
             </div>
             <div class="card" draggable="true" data-order="4">
               <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
               <div class="card-content">
-                <h2>Step 4: Polish the Block</h2>
+                <h3>Step 4: Polish the Block</h3>
                 <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
                 </p>
               </div>
@@ -468,7 +477,7 @@
         <div id="landing" class="quiz__landing">
           <div class="quiz__container">
             <p class="quiz__subtitle">Quick revise</p>
-            <h1 class="quiz__title">How much can you remember from this story?</h1>
+            <h2 class="quiz__title">How much can you remember from this story?</h2>
             <p class="quiz__description">
               Answer 5 simple questions to test your knowledge of this story.
             </p>
@@ -494,24 +503,25 @@
               <button class="quiz__nav hidden" id="finishButton">Finish</button>
             </div>
           </div>
-          <div id="resultPage" class="quiz__result hidden">
-            <div class="quiz__container">
-              <h1 class="quiz__title" id="resultText">Your result will appear here</h1>
-              <p id="feedbackText"></p>
-              <button class="button" id="restartQuiz">Play Again</button>
-            </div>
+        </div>
+        <div id="resultPage" class="quiz__result hidden">
+          <div class="quiz__container">
+            <h2 class="quiz__title" id="resultText">Your result will appear here</h2>
+            <p id="feedbackText"></p>
+            <button class="button" id="restartQuiz">Play Again</button>
           </div>
+        </div>
       </section>
 
-      <section>
+      <section class="museum">
         <div class="container">
-          <h1>Step into Plantin’s World</h1>
+          <h2>Step into Plantin’s World</h2>
           <p>Plantin’s story comes alive at the Plantin-Moretus Museum in Antwerp. Walk through his original workshop,
             see
             the
             presses he used, explore a treasure trove of Renaissance books, and more.</p>
           <button class="button">Plan your visit</button>
-          <div>What to expect?</div>
+          <p class="slogan">What to expect?</p>
           <div>
             <img src="#" alt="">
             <p>Explore the printing house where history was made.</p>
@@ -530,9 +540,9 @@
           </div>
         </div>
       </section>
-      <section class="museum">
+      <section class="stories">
         <div class="container">
-          <h1>More Stories <span>coming soon</span>!</h1>
+          <h2>More Stories <span>coming soon</span>!</h2>
           <p>Every two months, we’ll release a new chapter in the history of printing. Here’s what’s coming next:</p>
           <div class="table">
             <div class="release-date">Released</div>
@@ -541,15 +551,18 @@
         </div>
       </section>
       <section class="subscribe">
-        <div class="container">
-          <h1>Don't Miss a Page of History</h1>
-          <p>Subscribe to receive updates about our upcoming stories, events, and everything happening at the
+        <div class="subscribe__container">
+          <h2 class="subscribe__title">Don't Miss a Page of History</h2>
+          <p class="subscribe__description">Subscribe to receive updates about our upcoming stories, events, and
+            everything happening at the
             Plantin-Moretus Museum.</p>
-          <input type="email" id="email" pattern=".+@example\.com" placeholder="Your email address" size="30"
-            required />
-          <button class="button">Subscribe</button>
+          <div class="subscribe__row">
+            <input type="email" id="email" pattern=".+@example\.com" placeholder="Your email address" required />
+            <button class="button">Subscribe</button>
+          </div>
         </div>
       </section>
+    </div>
   </main>
   <footer class="footer">
     <a class="logo" href="/index.html">
@@ -561,7 +574,7 @@
       <li class="footer__item"><a class="footer__link" href="#">Collections</a></li>
       <li class="footer__item"><a class="footer__link" href="#">Plan your visit</a></li>
     </ul>
-    <div class="footer__copyright">© Copyright 2025 Devine - Thinh Phuong Linh</div>
+    <p class="footer__copyright">© Copyright 2025 Devine - Thinh Phuong Linh</p>
     <div class="footer__socials">
       <a href="#"><svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
