@@ -90,40 +90,7 @@ document.querySelectorAll("button[data-step]").forEach((button) => {
   button.addEventListener("click", handleStepClick);
 });
 
-//COMPASS
-const compass = new DotLottie({
-  canvas: document.querySelector("#compass"),
-  src: "assets/motion/compass.json",
-});
-const compassAnimation = () => {
-  gsap.to(compass.canvas, {
-      scrollTrigger: {
-        trigger: '.data',
-        start: 'top 0%',
-        end: '+=900',
-        pin: true,
-        scrub: true,
-        onUpdate: (self) => {
-          compass.setFrame(self.progress * (compass.totalFrames - 1));
-        }
-      },
-    })
-};
 
-const stackingData = () => {
-  gsap.set('.data__card', { position: 'absolute' });
-  gsap.to('.data__card', {
-    yPercent: -100,
-    stagger: 0.5,
-    scrollTrigger: {
-      trigger: '.data',
-      start: 'top 10%',
-      end: '+=900',
-      pin: true,
-      scrub: true,
-    },
-  })
-};
 //PLANTIN ONLY
 const plantin = new DotLottie({
   autoplay: true,
@@ -177,62 +144,53 @@ const heroAnimation = () => {
 
 }
 //Split text
-const splitText = (selector) => {
-  const elements = document.querySelectorAll(selector);
-  elements.forEach((el) => {
-    const text = el.textContent;
-    el.innerHTML = text
-      .split('')
-      .map((char) => (char.trim() ? `<span>${char}</span>` : char))
-      .join('');
-  });
-};
-const animateTitles = () => {
-  splitText('.slogan');
-  gsap.from(
-    '.slogan span',
-    {
-      y: 100,
-      opacity: 0,
-      stagger: 0.05,
-      ease: 'back.out(1.7)',
-      duration: 0.5,
-    }
-  );
-}
-//avatar on scroll
+// const splitText = (selector) => {
+//   const elements = document.querySelectorAll(selector);
+//   elements.forEach((el) => {
+//     const text = el.textContent;
+//     el.innerHTML = text
+//       .split('')
+//       .map((char) => (char.trim() ? `<span>${char}</span>` : char))
+//       .join('');
+//   });
+// };
+// const animateTitles = () => {
+//   splitText('.slogan');
+//   gsap.from(
+//     '.slogan span',
+//     {
+//       y: 100,
+//       opacity: 0,
+//       stagger: 0.05,
+//       ease: 'back.out(1.7)',
+//       duration: 0.5,
+//     }
+//   );
+// }
+
 const animateAvatarOnScroll = () => {
-  gsap.to('#plantin', {
-    x: 600,
-    y: -100,
-    ease: 'none',
+  let tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.journey',
-      start: 'top 80%',
-      end: 'bottom 90%',
+      start: 'top 70%',
+      end: 'bottom 40%',
       scrub: true,
-      marker: true,
-    },
-  })
-}
-const animateAvatarTravel = () => {
-  gsap.fromTo('#plantin',
-    {
-      x: 600,
-      y: -100,
-    },
-    {
-      x: 800,
-      y: -400,
-      scrollTrigger: {
-        trigger: '.journey',
-        start: 'top 20%',
-        end: 'bottom 80%',
-        scrub: true,
-        marker: true,
-      },
-    })
-}
+      markers: false,
+    }
+  });
+
+  tl.to('#plantin', {
+    x: 700,
+    y: 0,
+    scale: 0.5,
+  });
+
+  tl.to('#plantin', {
+    x: 900,
+    y: -300,
+    scale: 0,
+  });
+};
 
 const animateWorkshop = () => {
   gsap.from('.workshop__img', {
@@ -240,48 +198,35 @@ const animateWorkshop = () => {
     ease: 'none',
     scrollTrigger: {
       trigger: '.workshop',
-      start: 'top 0%',
-      end: 'bottom 70%',
+      start: 'top 50%',
+      end: 'bottom 50%',
       scrub: true,
-      marker: true,
+      marker: false,
     },
   })
 }
 
+//Roller printing
 const animateRoller = () => {
-  gsap.to('.printing__rubber', {
+  let tl = gsap.timeline();
+
+  tl.to('.printing__rubber', {
     x: -100,
-    y: 550,
+    y: 450,
     rotate: 90,
-    scrollTrigger: {
-      trigger: '#printing-process',
-      start: 'top 40%',
-      end: 'bottom 95%',
-      scrub: true,
-      marker: true,
-    },
-  })
-}
-const animateRollerContinue = () => {
-  gsap.fromTo('.printing__rubber',
-    {
-      x: -100,
-      y: 600,
-      rotate: 90,
-    },
-    {
-      x: -500,
-      y: 600,
-      rotate: 90,
-      scrollTrigger: {
-        trigger: '#printing-process',
-        start: 'top 15%',
-        end: 'bottom 95%',
-        scrub: true,
-        marker: true,
-      }
-    });
-}
+  });
+
+  tl.to('.printing__rubber', {
+    x: -400,
+    y: 450,
+    rotate: 50,
+  });
+};
+
+
+document.querySelector("#roller__button").addEventListener("click", animateRoller)
+
+//bio
 const bioImage = () => {
   gsap.to('.bio__img', {
     x: 0,
@@ -291,22 +236,58 @@ const bioImage = () => {
       start: 'top 40%',
       end: 'bottom 95%',
       scrub: true,
-      marker: true,
+      marker: false,
     },
   })
 }
+
+//COMPASS
+const compass = new DotLottie({
+  canvas: document.querySelector("#compass"),
+  src: "assets/motion/compass.json",
+});
+const compassAnimation = () => {
+  gsap.to(compass.canvas, {
+    scrollTrigger: {
+      trigger: '.data',
+      start: 'top 0%',
+      end: '+=500',
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        compass.setFrame(self.progress * (compass.totalFrames - 1));
+      }
+    },
+  })
+};
+//STACKING DATA
+const stackingData = () => {
+  gsap.set('.data__card', { position: 'absolute' });
+  gsap.to('.data__card', {
+    yPercent: -100,
+    stagger: 0.5,
+    scrollTrigger: {
+      trigger: '.data',
+      start: 'top 10%',
+      end: '+=500',
+      pin: true,
+      scrub: true,
+    },
+  })
+};
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.defaults({ markers: { startColor: "black", endColor: "blue" } });
+  ScrollTrigger.defaults({ markers: false });
 
   $navButton.addEventListener("click", toggleNavigation);
-  animateTitles();
+  // animateTitles();
   heroAnimation();
   animateAvatarOnScroll();
-  animateAvatarTravel();
+  // animateAvatarTravel();
   animateWorkshop();
   animateRoller();
-  animateRollerContinue();
+  // animateRollerContinue();
   bioImage();
   compassAnimation();
   stackingData();

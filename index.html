@@ -448,7 +448,7 @@
 
       <section class="printing">
         <div class="printing__detail">
-          <h2>How the printing press works?</h2>
+          <h2>How does the printing press work?</h2>
           <p>Printing in the 16th century was a labor-intensive process requiring skill, precision, and teamwork. From
             carving
             movable type to aligning pages and operating the press, every step was an art in itself.</br>
@@ -456,10 +456,9 @@
             Try it yourself how to print your first paper in Plantin’s workshop by following these steps:</p>
         </div>
         <img class="printing__rubber" src="/assets/img/rubber-roller.svg" width="100" alt="paint">
-        <img class="printing__ink" src="/assets/img/ink.png" width="150" alt="paint">
         <canvas class="canvas" id="printing-process"></canvas>
         <div class="step-buttons">
-          <button data-step="0">Step 0</button>
+          <button id="roller__button" data-step="0">Step 0</button>
           <button data-step="1">Step 1</button>
           <button data-step="2">Step 2</button>
           <button data-step="3">Step 3</button>
@@ -488,33 +487,34 @@
         <!-- Cards Section -->
         <div class="cards__container">
           <div class="card" draggable="true" data-order="1">
-            <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
+            <img class="card__img" src="/assets/img/casting-26.png" width="50" height="50" alt="Step 1"
+              style="width:100%">
             <div class="card-content">
-              <h3>Step 1: Prepare the Mold</h3>
+              <h3>Prepare the Mold</h3>
               <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
                 uniformity.
               </p>
             </div>
           </div>
-          <div class="card" draggable="true" data-order="3">
-            <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
+          <div class="card" draggable="true" data-order="2">
+            <img src="/assets/img/casting-28.png" width="50" height="50" alt="Step 2" style="width:100%">
             <div class="card-content">
-              <h3>Step 3: Cast the Letter</h3>
+              <h3>Melt the Metal</h3>
+              <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
+            </div>
+          </div>
+          <div class="card" draggable="true" data-order="3">
+            <img src="/assets/img/casting-27.png" width="50" height="50" alt="Step 3" style="width:100%">
+            <div class="card-content">
+              <h3>Cast the Letter</h3>
               <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.
               </p>
             </div>
           </div>
-          <div class="card" draggable="true" data-order="2">
-            <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
-            <div class="card-content">
-              <h3>Step 2: Melt the Metal</h3>
-              <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
-            </div>
-          </div>
           <div class="card" draggable="true" data-order="4">
-            <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
+            <img src="/assets/img/casting-29.png" width="50" height="50" alt="Step 4" style="width:100%">
             <div class="card-content">
-              <h3>Step 4: Polish the Block</h3>
+              <h3>Polish the Block</h3>
               <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
               </p>
             </div>
