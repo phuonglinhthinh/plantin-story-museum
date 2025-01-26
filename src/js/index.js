@@ -36,24 +36,22 @@ const createHeroPlayer = () => {
     canvas: canvas,
     src: jsonName,
   });
-  heroPlayer.play();
 };
 
 // Function to control motion based on mouse activity
-let motionTimeout;
-const handleMouseMove = () => {
+let motionTimeout = 0;
+const handleMouseMove = (e) => {
   clearTimeout(motionTimeout);
 
-  if (!heroPlayer.isPlaying) heroPlayer.play();
+  if (heroPlayer.isPaused) heroPlayer.play();
 
   motionTimeout = setTimeout(() => {
     heroPlayer.pause();
-  }, 1000);
+  }, 500);
 };
 
-// Event listeners for mouse and touch movement
-window.addEventListener("mousemove", handleMouseMove);
-window.addEventListener("touchmove", handleMouseMove);
+document.addEventListener("pointermove", handleMouseMove);
+document.addEventListener("touchmove", handleMouseMove);
 
 //PRINTING PRESS
 const steps = [
@@ -124,17 +122,13 @@ const toggleNavigation = () => {
 
 // CANVAS RESIZE
 const resizeCanvas = () => {
-  /*const canvases = document.querySelectorAll('.canvas');
-  canvases.forEach((canvas) => {
-    canvas.width = Math.floor(0.7 * window.innerWidth);
-    canvas.height = Math.floor(window.innerHeight - 0.5 * window.innerHeight);
-  });*/
   plantin.resize();
   player.resize();
   createHeroPlayer();
 };
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
+
 // GSAP 
 //navigation
 const heroAnimation = () => {
