@@ -323,7 +323,6 @@ mark {
 
 
 .printing,
-.data,
 .museum,
 .casting,
 .stories,
@@ -333,6 +332,39 @@ mark {
   justify-items: center;
   padding: 0 1rem;
   margin: 4rem 0;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 0 1rem;
+  margin: 4rem 0;
+}
+
+#compass {
+  grid-column: 1;
+}
+
+.data__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.data__card {
+  position: absolute;
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 40vw;
 }
 
 .museum {
@@ -446,9 +478,6 @@ mark {
   user-select: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-
-  /* grid-column: 1;
-  grid-row: 1; */
 }
 
 .card.dragging {
@@ -590,10 +619,10 @@ input[type="email"] {
     align-self: flex-start;
   }
 
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .cards__container {
+    display: flex;
     gap: 1rem;
+    padding: 0 1rem;
   }
 
   .card {
@@ -630,6 +659,17 @@ input[type="email"] {
     grid-row: 3;
     align-self: end;
   }
+
+  /* 
+  .data {
+    grid-template-columns: auto auto;
+  }
+
+  .data__slogan {
+    grid-row: 1;
+    grid-column: 1/ span 2;
+  } */
+
 
   /* .subscribe__container {
     padding: 3rem 4.5rem 3.5rem 4.5rem;

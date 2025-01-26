@@ -1,6 +1,7 @@
 // JavaScript for drag-and-drop functionality
+
 const cards = document.querySelectorAll('.card');
-const container = document.querySelector('.cards-container');
+const container = document.querySelector('.cards__container');
 const statusCircles = document.querySelectorAll('.circle');
 
 let draggedCard = null;
@@ -19,8 +20,8 @@ cards.forEach(card => {
 
 container.addEventListener('dragover', e => {
     e.preventDefault();
-    const afterElement = getDragAfterElement(container, e.clientY);
-    if (draggedCard && afterElement == null) {
+    const afterElement = getDragAfterElement(container, e.clientX);
+    if (draggedCard && !afterElement) {
         container.appendChild(draggedCard);
     } else if (draggedCard && afterElement) {
         container.insertBefore(draggedCard, afterElement);
@@ -28,19 +29,21 @@ container.addEventListener('dragover', e => {
     updateStatus();
 });
 
-const getDragAfterElement = (container, y) => {
+const getDragAfterElement = (container, x) => {
     const draggableElements = [...container.querySelectorAll('.card:not(.dragging)')];
 
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;
+        const offset = x - (box.left + box.width / 2);
+
         if (offset < 0 && offset > closest.offset) {
             return { offset: offset, element: child };
         } else {
             return closest;
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element;
-}
+};
+
 
 const updateStatus = () => {
     const currentOrder = [...container.children].map(card => card.dataset.order);

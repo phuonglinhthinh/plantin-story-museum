@@ -70,7 +70,6 @@ const player = new DotLottie({
   src: "assets/motion/printing-process.json",
 });
 
-// Handle button clicks
 const handleStepClick = (e) => {
   const stepIndex = parseInt(e.target.getAttribute("data-step"), 10) - 1;
 
@@ -93,6 +92,26 @@ document.querySelectorAll("button[data-step]").forEach((button) => {
   button.addEventListener("click", handleStepClick);
 });
 
+//COMPASS
+const compass = new DotLottie({
+  canvas: document.querySelector("#compass"),
+  src: "assets/motion/compass.json",
+});
+const compassAnimation = () => {
+  gsap.timeline()
+  .to(compass.canvas, {
+    scrollTrigger: {
+      trigger: '.data',
+      start: 'top top',
+      end: '+=1000',
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        compass.setFrame(self.progress * (compass.totalFrames - 1));
+      }
+    },
+  })
+};
 
 //PLANTIN ONLY
 const plantin = new DotLottie({
@@ -278,6 +297,7 @@ const init = () => {
   animateRoller();
   animateRollerContinue();
   bioImage();
+  compassAnimation();
 }
 
 init();
