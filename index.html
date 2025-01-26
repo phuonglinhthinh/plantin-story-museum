@@ -354,6 +354,7 @@
           </div>
         </div>
       </section>
+
       <section class="bio">
         <canvas class="canvas" id="plantin"></canvas>
         <div class="container">
@@ -367,6 +368,7 @@
             its precision and quality.<br />
             His work made knowledge more accessible and brought precision to the art of printing.</p>
       </section>
+
       <section class="journey">
         <p class="slogan journey__slogan">But Plantin’s story wasn’t always rooted in France.</p>
         <div class="journey__detail">
@@ -379,100 +381,109 @@
         </div>
         <img class="journey__map" src="/assets/img/map.svg" width="600" alt="map">
       </section>
+
       <section class="data">
-        <p class="slogan">Plantin’s workshop was enormous for its time. At its peak, it had 22 printing presses and 80 workers, each
+        <p class="slogan">Plantin’s workshop was enormous for its time. At its peak, it had 22 printing presses and 80
+          workers, each
           contributing
           to the meticulous art of book production.</p>
-        <h2>22 presses</h2>
-        <h2>80 workers</h2>
+        <h3>22 presses</h3>
+        <h3>80 workers</h3>
       </section>
+
       <section class="workshop">
-        <img src="/assets/img/office.svg" width="750" alt="office">
-        <div class="container">
-          <h2>Plantin’s Workshop - Museum</h2>
-          <p>Officina Plantiniana - a place where precision, craftsmanship, and innovation came together to create books
-            of
-            extraordinary quality. Here are a few things that made it unique as UNESCO heritages:</p>
-          <p>The World’s Oldest Presses</p>
-          <p>An Unmatched Library</p>
-          <p>Teamwork at Its Finest</p>
-          <div>Drag the rubber roller to reveal them.</div>
-          <p class="slogan">Ready to experience a day in Plantin’s office?</p>
+        <img class="workshop__img" src="/assets/img/office.svg" width="750" alt="office">
+        <div class="workshop__detail">
+          <h2 class="workshop__title">Plantin’s Workshop - Museum</h2>
+          <p class="workshop__description">Officina Plantiniana - a place where precision, craftsmanship, and innovation
+            came together to create books of extraordinary quality. Here are a few things that made it unique as UNESCO
+            heritages:</p>
         </div>
+        <div class="workshop__notes">
+          <p>Drag the rubber roller to reveal them.</p>
+          <p class="slogan">The World’s Oldest Presses</p>
+          <p class="slogan">An Unmatched Library</p>
+          <p class="slogan">Teamwork at Its Finest</p>
+        </div>
+        <p class="slogan workshop__slogan">Ready to experience a day in Plantin’s office?</p>
       </section>
+
       <section class="printing">
-        <div class="container">
+        <div class="printing__detail">
           <h2>How the printing press works?</h2>
           <p>Printing in the 16th century was a labor-intensive process requiring skill, precision, and teamwork. From
             carving
             movable type to aligning pages and operating the press, every step was an art in itself.</br>
 
             Try it yourself how to print your first paper in Plantin’s workshop by following these steps:</p>
-          <img src="/assets/img/rubber-roller.svg" width="150" alt="paint">
-          <canvas class="canvas" id="printing-process"></canvas>
-          <div class="step-buttons">
-            <button data-step="1">Step 1</button>
-            <button data-step="2">Step 2</button>
-            <button data-step="3">Step 3</button>
-            <button data-step="4">Step 4</button>
-            <button data-step="5">Step 5</button>
-            <button data-step="6">Step 6</button>
-          </div>
+        </div>
+        <img class="printing__rubber" src="/assets/img/rubber-roller.svg" width="100" alt="paint">
+        <img class="printing__ink" src="/assets/img/ink.png" width="150" alt="paint">
+        <canvas class="canvas" id="printing-process"></canvas>
+        <div class="step-buttons">
+          <button data-step="0">Step 0</button>
+          <button data-step="1">Step 1</button>
+          <button data-step="2">Step 2</button>
+          <button data-step="3">Step 3</button>
+          <button data-step="4">Step 4</button>
+          <button data-step="5">Step 5</button>
+          <button data-step="6">Step 6</button>
         </div>
       </section>
+
       <section class="casting">
-        <div class="container">
+        <div class="casting__detail">
           <h2>Letter Casting</h2>
           <p>Every printed page began with a single letter. Let’s explore how these letters were crafted by the skilled
             artisans of Plantin’s team. This process required precision and patience, and these tiny metal blocks were
             the
             foundation of every book.</p>
+        </div>
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <div class="circle" data-step="1">1</div>
+          <div class="circle" data-step="2">2</div>
+          <div class="circle" data-step="3">3</div>
+          <div class="circle" data-step="4">4</div>
+        </div>
 
-          <!-- Status Bar -->
-          <div class="status-bar">
-            <div class="circle" data-step="1">1</div>
-            <div class="circle" data-step="2">2</div>
-            <div class="circle" data-step="3">3</div>
-            <div class="circle" data-step="4">4</div>
+        <!-- Cards Section -->
+        <div class="cards-container">
+          <div class="card" draggable="true" data-order="1">
+            <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
+            <div class="card-content">
+              <h3>Step 1: Prepare the Mold</h3>
+              <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
+                uniformity.
+              </p>
+            </div>
           </div>
-
-          <!-- Cards Section -->
-          <div class="cards-container">
-            <div class="card" draggable="true" data-order="1">
-              <img src="/assets/img/paint.svg" alt="Step 1" style="width:100%">
-              <div class="card-content">
-                <h3>Step 1: Prepare the Mold</h3>
-                <p>Artisans began by creating a mold for casting letters. This mold had to be precise to ensure
-                  uniformity.
-                </p>
-              </div>
+          <div class="card" draggable="true" data-order="3">
+            <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
+            <div class="card-content">
+              <h3>Step 3: Cast the Letter</h3>
+              <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.
+              </p>
             </div>
-            <div class="card" draggable="true" data-order="3">
-              <img src="/assets/img/paint.svg" alt="Step 3" style="width:100%">
-              <div class="card-content">
-                <h3>Step 3: Cast the Letter</h3>
-                <p>The molten metal was poured into the mold, creating a tiny block with a perfect letter impression.
-                </p>
-              </div>
+          </div>
+          <div class="card" draggable="true" data-order="2">
+            <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
+            <div class="card-content">
+              <h3>Step 2: Melt the Metal</h3>
+              <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
             </div>
-            <div class="card" draggable="true" data-order="2">
-              <img src="/assets/img/paint.svg" alt="Step 2" style="width:100%">
-              <div class="card-content">
-                <h3>Step 2: Melt the Metal</h3>
-                <p>Metal was melted at high temperatures to ensure it could fill the intricate details of the mold.</p>
-              </div>
-            </div>
-            <div class="card" draggable="true" data-order="4">
-              <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
-              <div class="card-content">
-                <h3>Step 4: Polish the Block</h3>
-                <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
-                </p>
-              </div>
+          </div>
+          <div class="card" draggable="true" data-order="4">
+            <img src="/assets/img/paint.svg" alt="Step 4" style="width:100%">
+            <div class="card-content">
+              <h3>Step 4: Polish the Block</h3>
+              <p>Once cooled, the block was polished and inspected for accuracy before being used in printing presses.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
       <section class="quiz">
         <div id="landing" class="quiz__landing">
           <div class="quiz__container">
@@ -514,45 +525,64 @@
       </section>
 
       <section class="museum">
-        <div class="container">
+        <div class="museum__detail">
           <h2>Step into Plantin’s World</h2>
           <p>Plantin’s story comes alive at the Plantin-Moretus Museum in Antwerp. Walk through his original workshop,
             see
             the
             presses he used, explore a treasure trove of Renaissance books, and more.</p>
-          <button class="button">Plan your visit</button>
-          <p class="slogan">What to expect?</p>
-          <div>
-            <img src="#" alt="">
-            <p>Explore the printing house where history was made.</p>
-          </div>
-          <div>
-            <img src="#" alt="">
-            <p>Marvel at manuscripts, prints, and rare collections in the library.</p>
-          </div>
-          <div>
-            <img src="#" alt="">
-            <p>Discover the artistry behind book production.</p>
-          </div>
-          <div>
-            <img src="#" alt="">
-            <p>Meet Plantin and his family via stories</p>
-          </div>
+          <button class="button museum__button">Plan your visit</button>
         </div>
+        <p class="slogan museum__slogan">What to expect?</p>
+        <div class="museum__step museum__step--1">
+          <img src="/assets/img/museum-step.png" alt="">
+          <p>Explore the printing house where history was made.</p>
+        </div>
+        <div class="museum__step museum__step--2">
+          <img src="/assets/img/museum-step2.png" alt="">
+          <p>Marvel at manuscripts, prints, and rare collections in the library.</p>
+        </div>
+        <div class="museum__step museum__step--3">
+          <img src="/assets/img/museum-step.png" alt="">
+          <p>Discover the artistry behind book production.</p>
+        </div>
+        <div class="museum__step museum__step--4">
+          <img src="/assets/img/museum-step.png" alt="">
+          <p>Meet Plantin and his family via stories</p>
+        </div>
+        <img class="museum__trace--left" src="/assets/img/foot-trace-left.png" alt="trace">
+        <img class="museum__trace--right" src="/assets/img/foot-trace-right.png" alt="trace">
       </section>
+
       <section class="stories">
         <div class="container">
           <h2>More Stories <span>coming soon</span>!</h2>
           <p>Every two months, we’ll release a new chapter in the history of printing. Here’s what’s coming next:</p>
           <div class="table">
-            <div class="release-date">Released</div>
-            <p class="">Legacy of Christopher’s Plantin</p>
+            <p class="grid-cell header">Released</p>
+            <p class="grid-cell header">Legacy of Christopher’s Plantin</p>
+
+            <p class="grid-cell">01/03</p>
+            <p class="grid-cell">The Polyglot Bible: A Printing Marvel</p>
+
+            <p class="grid-cell">01/03</p>
+            <p class="grid-cell">Moretus and Plantin-Moretus Museum</p>
+
+            <p class="grid-cell">01/03</p>
+            <p class="grid-cell">Antwerp: A City of Printing</p>
+
+            <p class="grid-cell">01/03</p>
+            <p class="grid-cell">The Plantin Family History</p>
+
+            <p class="grid-cell">01/03</p>
+            <p class="grid-cell">The Museum: Past Meets Present</p>
           </div>
         </div>
       </section>
+
       <section class="subscribe">
         <div class="subscribe__container">
-          <h2 class="subscribe__title">Don't Miss a Page of History</h2>
+          <h2 class="subscribe__title">Don't Miss a Page of History!</h2>
           <p class="subscribe__description">Subscribe to receive updates about our upcoming stories, events, and
             everything happening at the
             Plantin-Moretus Museum.</p>

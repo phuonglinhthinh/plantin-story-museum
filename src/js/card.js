@@ -28,7 +28,7 @@ container.addEventListener('dragover', e => {
     updateStatus();
 });
 
-function getDragAfterElement(container, y) {
+const getDragAfterElement = (container, y) => {
     const draggableElements = [...container.querySelectorAll('.card:not(.dragging)')];
 
     return draggableElements.reduce((closest, child) => {
@@ -42,7 +42,7 @@ function getDragAfterElement(container, y) {
     }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
-function updateStatus() {
+const updateStatus = () => {
     const currentOrder = [...container.children].map(card => card.dataset.order);
     statusCircles.forEach((circle, index) => {
         if (currentOrder[index] == circle.dataset.step) {
