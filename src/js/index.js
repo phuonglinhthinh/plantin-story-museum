@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { DotLottie, DotLottieWorker } from '@lottiefiles/dotlottie-web';
+import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 const $navButton = document.querySelector('.nav__button');
 const $navList = document.querySelector('.nav__list');
@@ -136,13 +135,155 @@ const resizeCanvas = () => {
 };
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
+// GSAP 
+//navigation
+const heroAnimation = () => {
+  gsap.from('.nav', {
+    y: -100,
+    ease: "power3.out",
+    stagger: 0.5,
+    duration: 1
+  })
+  gsap.from('.hero__title', {
+    y: 100,
+    ease: "power3.out",
+    stagger: 0.5,
+    duration: 1
+  })
 
+}
+//Split text
+const splitText = (selector) => {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((el) => {
+    const text = el.textContent;
+    el.innerHTML = text
+      .split('')
+      .map((char) => (char.trim() ? `<span>${char}</span>` : char))
+      .join('');
+  });
+};
+const animateTitles = () => {
+  splitText('.slogan');
+  gsap.from(
+    '.slogan span',
+    {
+      y: 100,
+      opacity: 0,
+      stagger: 0.05,
+      ease: 'back.out(1.7)',
+      duration: 0.5,
+    }
+  );
+}
+//avatar on scroll
+const animateAvatarOnScroll = () => {
+  gsap.to('#plantin', {
+    x: 600,
+    y: -100,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.journey',
+      start: 'top 80%',
+      end: 'bottom 90%',
+      scrub: true,
+      marker: true,
+    },
+  })
+}
+const animateAvatarTravel = () => {
+  gsap.fromTo('#plantin',
+    {
+      x: 600,
+      y: -100,
+    },
+    {
+      x: 800,
+      y: -400,
+      scrollTrigger: {
+        trigger: '.journey',
+        start: 'top 20%',
+        end: 'bottom 80%',
+        scrub: true,
+        marker: true,
+      },
+    })
+}
+
+const animateWorkshop = () => {
+  gsap.from('.workshop__img', {
+    scale: 1.5,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.workshop',
+      start: 'top 0%',
+      end: 'bottom 70%',
+      scrub: true,
+      marker: true,
+    },
+  })
+}
+
+const animateRoller = () => {
+  gsap.to('.printing__rubber', {
+    x: -100,
+    y: 550,
+    rotate: 90,
+    scrollTrigger: {
+      trigger: '#printing-process',
+      start: 'top 40%',
+      end: 'bottom 95%',
+      scrub: true,
+      marker: true,
+    },
+  })
+}
+const animateRollerContinue = () => {
+  gsap.fromTo('.printing__rubber',
+    {
+      x: -100,
+      y: 600,
+      rotate: 90,
+    },
+    {
+      x: -500,
+      y: 600,
+      rotate: 90,
+      scrollTrigger: {
+        trigger: '#printing-process',
+        start: 'top 15%',
+        end: 'bottom 95%',
+        scrub: true,
+        marker: true,
+      }
+    });
+}
+const bioImage = () => {
+  gsap.to('.bio__img', {
+    x: 0,
+    y: 50,
+    scrollTrigger: {
+      trigger: '.bio',
+      start: 'top 40%',
+      end: 'bottom 95%',
+      scrub: true,
+      marker: true,
+    },
+  })
+}
 const init = () => {
-  gsap.registerPlugin(ScrollTrigger, TextPlugin);
-  ScrollTrigger.defaults({ markers: false });
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.defaults({ markers: { startColor: "black", endColor: "blue" } });
 
   $navButton.addEventListener("click", toggleNavigation);
-
+  animateTitles();
+  heroAnimation();
+  animateAvatarOnScroll();
+  animateAvatarTravel();
+  animateWorkshop();
+  animateRoller();
+  animateRollerContinue();
+  bioImage();
 }
 
 init();
