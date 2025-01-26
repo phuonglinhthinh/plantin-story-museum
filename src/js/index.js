@@ -81,10 +81,8 @@ const handleStepClick = (e) => {
   player.setMarker(steps[stepIndex].marker);
   player.play();
 
-  // When the step finishes playing, mark it as completed
   player.addEventListener("complete", () => {
     steps[stepIndex].completed = true;
-    // alert(`Step ${stepIndex + 1} completed!`);
   });
 };
 
@@ -98,21 +96,34 @@ const compass = new DotLottie({
   src: "assets/motion/compass.json",
 });
 const compassAnimation = () => {
-  gsap.timeline()
-  .to(compass.canvas, {
+  gsap.to(compass.canvas, {
+      scrollTrigger: {
+        trigger: '.data',
+        start: 'top 0%',
+        end: '+=1000',
+        pin: true,
+        scrub: true,
+        onUpdate: (self) => {
+          compass.setFrame(self.progress * (compass.totalFrames - 1));
+        }
+      },
+    })
+};
+
+const stackingData = () => {
+  gsap.set('.data__card', { position: 'absolute' });
+  gsap.to('.data__card', {
+    yPercent: -300,
+    stagger: 0.5,
     scrollTrigger: {
-      trigger: '.data',
-      start: 'top top',
+      trigger: '.data__container',
+      start: 'top 0%',
       end: '+=1000',
       pin: true,
       scrub: true,
-      onUpdate: (self) => {
-        compass.setFrame(self.progress * (compass.totalFrames - 1));
-      }
     },
   })
 };
-
 //PLANTIN ONLY
 const plantin = new DotLottie({
   autoplay: true,
@@ -298,6 +309,7 @@ const init = () => {
   animateRollerContinue();
   bioImage();
   compassAnimation();
+  stackingData();
 }
 
 init();

@@ -347,24 +347,48 @@ mark {
 }
 
 .data__container {
+  grid-row: 1 / span 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
   justify-items: center;
 }
 
 .data__card {
-  position: absolute;
+  position: relative;
   background-color: var(--white);
   border: 1px solid #ccc;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
-  width: 40vw;
+  min-width: 400px;
+  /* margin-bottom: 50px; */
+  /* width: 100%;
+  max-width: 500px;
+  min-height: 200px; */
+}
+
+.data__card:nth-child(1) {
+  transform: translateY(0);
+  z-index: 4;
+}
+
+.data__card:nth-child(2) {
+  transform: translateY(20px);
+  z-index: 3;
+}
+
+.data__card:nth-child(3) {
+  transform: translateY(40px);
+  z-index: 2;
+}
+
+.data__card:nth-child(4) {
+  transform: translateY(60px);
+  z-index: 1;
 }
 
 .museum {
@@ -660,21 +684,6 @@ input[type="email"] {
     align-self: end;
   }
 
-  /* 
-  .data {
-    grid-template-columns: auto auto;
-  }
-
-  .data__slogan {
-    grid-row: 1;
-    grid-column: 1/ span 2;
-  } */
-
-
-  /* .subscribe__container {
-    padding: 3rem 4.5rem 3.5rem 4.5rem;
-  } */
-
   .subscribe__row {
     flex-direction: row;
   }
@@ -731,7 +740,6 @@ input[type="email"] {
   /* main*/
   .hero {
     width: 100%;
-    /* min-height: 100vh; */
     position: relative;
   }
 
