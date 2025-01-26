@@ -100,7 +100,7 @@ const compassAnimation = () => {
       scrollTrigger: {
         trigger: '.data',
         start: 'top 0%',
-        end: '+=1000',
+        end: '+=900',
         pin: true,
         scrub: true,
         onUpdate: (self) => {
@@ -113,12 +113,12 @@ const compassAnimation = () => {
 const stackingData = () => {
   gsap.set('.data__card', { position: 'absolute' });
   gsap.to('.data__card', {
-    yPercent: -300,
+    yPercent: -100,
     stagger: 0.5,
     scrollTrigger: {
-      trigger: '.data__container',
-      start: 'top 0%',
-      end: '+=1000',
+      trigger: '.data',
+      start: 'top 10%',
+      end: '+=900',
       pin: true,
       scrub: true,
     },
