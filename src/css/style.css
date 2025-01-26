@@ -320,7 +320,7 @@ mark {
 
 .data {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-items: center;
   padding: 0 1rem;
   margin: 4rem 0;
@@ -331,7 +331,7 @@ mark {
 }
 
 .data__container {
-  grid-column: 2;
+  grid-column: 1;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -602,6 +602,14 @@ input[type="email"] {
 } */
 
 @media screen and (min-width: 32em) {
+  .data {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .data__container {
+    grid-column: 2;
+  }
+
   .hero__title {
     font-size: 5rem;
   }
